@@ -33,6 +33,14 @@ public class StoreConfigureEntity implements Serializable {
     private Integer status;
     //逻辑删除（0 正常  1 删除）
     private Integer isDelete;
+    //客服电话
+    private String ph;
+    //纬度
+    private String latitude;
+    //经度
+    private String longitude;
+    //地址信息
+    private String address;
     //创建者
     private String createBy;
     //创建时间
@@ -43,6 +51,7 @@ public class StoreConfigureEntity implements Serializable {
     private Date updateTime;
     //备注
     private String remark;
+
 
     /**
      * 设置：店铺ID（主键唯一）
@@ -161,6 +170,56 @@ public class StoreConfigureEntity implements Serializable {
     public Integer getIsDelete() {
         return isDelete;
     }
+
+    /**
+     * 设置：客服电话
+     */
+    public void setPh(String ph) {
+        this.ph = ph;
+    }
+    /**
+     * 获取：客服电话
+     */
+    public String getPh() {
+        return ph;
+    }
+    /**
+     * 设置：纬度
+     */
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+    /**
+     * 获取：纬度
+     */
+    public String getLatitude() {
+        return latitude;
+    }
+    /**
+     * 设置：经度
+     */
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
+    }
+    /**
+     * 获取：经度
+     */
+    public String getLongitude() {
+        return longitude;
+    }
+    /**
+     * 设置：地址信息
+     */
+    public void setAddress(String address) {
+        this.address = address;
+    }
+    /**
+     * 获取：地址信息
+     */
+    public String getAddress() {
+        return address;
+    }
+
     /**
      * 设置：创建者
      */

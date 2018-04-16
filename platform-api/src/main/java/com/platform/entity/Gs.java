@@ -6,18 +6,38 @@ import java.io.Serializable;
 public class Gs implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    //
+    //店铺ID
+    private Long storeId;
+    //身份标识（店铺/公司）一级ID
+    private Long deptParentId;
+    //客服电话
     private String ph;
-    //
+    //纬度
     private String latitude;
-    //
-    private Integer longitude;
-    //
+    //经度
+    private String longitude;
+    //地址信息
     private String address;
 
+
+    public Long getStoreId() {
+        return storeId;
+    }
+
+    public void setStoreId(Long storeId) {
+        this.storeId = storeId;
+    }
+
+    public Long getDeptParentId() {
+        return deptParentId;
+    }
+
+    public void setDeptParentId(Long deptParentId) {
+        this.deptParentId = deptParentId;
+    }
+
     public String getPh() {
-//        return ph;
-        return "12345678912";
+        return ph;
     }
 
     public void setPh(String ph) {
@@ -25,27 +45,23 @@ public class Gs implements Serializable {
     }
 
     public String getLatitude() {
-//        return latitude;
-        return "latitude";
+        return latitude;
     }
 
     public void setLatitude(String latitude) {
         this.latitude = latitude;
     }
 
-    public Integer getLongitude() {
-//        return longitude;
-        return 1111111111;
+    public String getLongitude() {
+        return longitude;
     }
 
-    public void setLongitude(Integer longitude) {
+    public void setLongitude(String longitude) {
         this.longitude = longitude;
     }
 
     public String getAddress() {
-//        return address;
-
-        return "this is address";
+        return address;
     }
 
     public void setAddress(String address) {

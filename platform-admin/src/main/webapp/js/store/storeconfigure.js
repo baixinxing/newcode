@@ -21,8 +21,12 @@ $(function () {
 					'<span class="label label-info">正常</span>': '<span class="label label-warning">删除</span>';
 				}
 			},
-			{label: '创建者', name: 'createBy', index: 'create_by', width: 55,align:'center'},
-			{label: '创建时间', name: 'createTime', index: 'create_time', width: 85,align:'center',formatter: function (value) {
+			{label: '客服电话', name: 'ph', index: 'ph', width: 80,align:'center'},
+			{label: '纬度', name: 'latitude', index: 'latitude', width: 50,align:'center'},
+			{label: '经度', name: 'longitude', index: 'longitude', width: 50,align:'center'},
+			{label: '定位地址', name: 'address', index: 'address', width: 130,align:'center'},
+			{label: '创建者', name: 'createBy', index: 'create_by', width: 55,align:'center',hidden:true},
+			{label: '创建时间', name: 'createTime', index: 'create_time', width: 85,align:'center',hidden:true,formatter: function (value) {
 				return transDate(value);
 				}
 			},
@@ -83,6 +87,13 @@ let vm = new Vue({
 			],
 			paySingKey: [
 				{required: true, message: '支付秘钥不能为空', trigger: 'blur'}
+			],
+			ph: [
+				{required: true, message: '客服电话不能为空', trigger: 'blur'},
+				{pattern: /^1[3|4|5|7|8][0-9]\d{8}$/, message: '请输入正确的11位手机号码'}
+			],
+			address: [
+				{required: true, message: '定位地址不能为空', trigger: 'blur'}
 			]
 		},
 		q: {

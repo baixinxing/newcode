@@ -24,26 +24,12 @@
         <processorPath useClasspath="true" />
         <module name="platform-common" />
       </profile>
-      <profile default="false" name="Annotation profile for platform-schedule" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="true" />
-        <module name="platform-schedule" />
-      </profile>
       <profile default="false" name="Annotation profile for platform-shiro" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="platform-shiro" />
-      </profile>
-      <profile default="false" name="Annotation profile for platform-shop" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="true" />
-        <module name="platform-shop" />
       </profile>
       <profile default="false" name="Annotation profile for platform-api" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -72,6 +58,20 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="platform-framework" />
+      </profile>
+      <profile default="false" name="Annotation profile for platform-schedule" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="platform-schedule" />
+      </profile>
+      <profile default="false" name="Annotation profile for platform-shop" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="platform-shop" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

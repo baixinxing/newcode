@@ -2,6 +2,7 @@ package com.platform.api;
 
 import com.alibaba.fastjson.JSONObject;
 import com.platform.annotation.IgnoreAuth;
+import com.platform.dao.ApiGsMapper;
 import com.platform.entity.FullUserInfo;
 import com.platform.entity.Gs;
 import com.platform.entity.UserInfo;
@@ -42,6 +43,8 @@ public class ApiAuthController extends ApiBaseAction {
     private TokenService tokenService;
     @Autowired
     private ApiUserUtils apiUserUtils;
+    @Autowired
+    private ApiGsMapper apiGsMapper;
 
     /**
      * 登录
@@ -126,7 +129,8 @@ public class ApiAuthController extends ApiBaseAction {
         if (null == userInfo || StringUtils.isNullOrEmpty(token)) {
             return toResponsFail("登录失败");
         }
-        Gs gs =new Gs();
+        Gs gs = apiGsMapper.queryObject(storeId);
+
         resultObj.put("token", token);
         resultObj.put("userInfo", userInfo);
         resultObj.put("gs", gs);

@@ -70,6 +70,18 @@
                     </Radio>
                 </Radio-group>
             </Form-item>
+            <Form-item label="客服电话" prop="ph" style="width: 400px;">
+                <i-input v-model="storeConfigure.ph" placeholder="客服电话"/>
+            </Form-item>
+            <Form-item label="纬度" prop="latitude" style="width: 300px;">
+                <i-input v-model="storeConfigure.latitude" placeholder="纬度定位"/>
+            </Form-item>
+            <Form-item label="经度" prop="longitude" style="width: 300px;">
+                <i-input v-model="storeConfigure.longitude" placeholder="经度定位"/>
+            </Form-item>
+            <Form-item label="定位地址" prop="address" style="width: 800px;">
+                <i-input v-model="storeConfigure.address" placeholder="定位地址"/>
+            </Form-item>
             <!--<Form-item label="创建者" prop="createBy">-->
                 <!--<i-input v-model="storeConfigure.createBy" placeholder="创建者"/>-->
             <!--</Form-item>-->
