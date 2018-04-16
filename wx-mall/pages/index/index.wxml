@@ -1,0 +1,73 @@
+<!--index.wxml-->
+<view class="container">
+  <!--广告推荐开始-->
+  <swiper class="banner" indicator-dots="true" autoplay="true" interval="3000" duration="1000">
+    <swiper-item wx:for="{{banner}}" wx:key="{{item.id}}">
+      <navigator url="{{item.link}}">
+        <image src="{{item.image_url}}" background-size="cover"></image>
+      </navigator>
+    </swiper-item>
+  </swiper>
+  <!--新品推荐结束-->
+  <!--新品推荐开始-->
+  <view class="a-section a-new" wx:if="{{newGoodsList.length > 0}}">
+    <!--新品推荐标题开始-->
+    <view class="h">
+      <view style='width: 100%;'>
+        <text class="txt"> 新品首发</text>
+        <view class="h-reght">
+          <navigator url="../newGoods/newGoods">
+            <text>更多</text>
+            <image src='/static/images/go.png'></image>
+          </navigator>
+        </view>
+      </view>
+
+    </view>
+    <!--新品推荐标题结束-->
+    <view class="b">
+      <view class="item" wx:for="{{newGoods}}" wx:for-index="index" wx:for-item="item" wx:key="{{item.id}}">
+        <navigator url="../goods/goods?id={{item.id}}">
+          <image class="img" src="{{item.list_pic_url}}" background-size="cover"></image>
+          <text class="name">{{item.name}}</text>
+          <text class="price">￥{{item.retail_price}}</text>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <!--新品推荐结束-->
+
+  <!--热销推荐开始-->
+  <view class="a-section a-popular" wx:if="{{hotGoodsList.length > 0}}">
+    <!--热销推荐标题开始-->
+    <view class="h">
+      <view style='width: 100%;'>
+        <text class="txt"> 热销推荐</text>
+        <view class="h-reght">
+          <navigator url="../hotGoods/hotGoods">
+            <text>更多</text>
+            <image src='/static/images/go.png'></image>
+          </navigator>
+        </view>
+      </view>
+      </view>
+      <!--热销推荐标题结束-->
+      <!--热销推荐列表开始-->
+      <view class="b">
+        <view class="item" wx:for="{{hotGoods}}" wx:for-index="index" wx:for-item="item" wx:key="{{item.id}}">
+          <navigator url="/pages/goods/goods?id={{item.id}}">
+            <image class="img" src="{{item.list_pic_url}}" background-size="cover"></image>
+            <view class="right">
+              <view class="text">
+                <text class="name">{{item.name}}</text>
+                <!-- <text class="desc">{{item.goods_brief}}</text> -->
+                <text class="price">￥{{item.retail_price}}</text>
+              </view>
+            </view>
+          </navigator>
+        </view>
+      </view>
+      <!--热销推荐列表结束-->
+    </view>
+    <!--热销推荐结束-->
+  </view>
