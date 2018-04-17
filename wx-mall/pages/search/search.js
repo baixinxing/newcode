@@ -89,6 +89,7 @@ Page({
   },
   getGoodsList: function () {
     let that = this;
+    debugger
     util.request(api.GoodsList, { keyword: that.data.keyword, page: that.data.page, size: that.data.size, sort: that.data.currentSortType, order: that.data.currentSortOrder, categoryId: that.data.categoryId, storeId: api.StoreId}).then(function (res) {
       if (res.errno === 0) {
         that.setData({

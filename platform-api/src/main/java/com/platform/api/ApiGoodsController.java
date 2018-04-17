@@ -283,7 +283,7 @@ public class ApiGoodsController extends ApiBaseAction {
     /**
      * 　　获取商品列表
      */
-    @IgnoreAuth
+//    @IgnoreAuth
     @RequestMapping("list")
     public Object list(@LoginUser UserVo loginUser, Integer categoryId,
                        Integer brandId, String keyword, Integer isNew, Integer isHot,
