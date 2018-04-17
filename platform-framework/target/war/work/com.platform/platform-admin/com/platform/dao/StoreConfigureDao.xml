@@ -116,7 +116,6 @@
 		    `longitude`,
 		    `address`,
 			`create_by`,
-			`create_by`,
 			`create_time`,
 			`update_by`,
 			`update_time`,

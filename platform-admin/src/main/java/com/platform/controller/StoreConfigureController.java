@@ -4,6 +4,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import com.platform.tools.PositionUtil;
+import com.platform.utils.*;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,9 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.platform.entity.StoreConfigureEntity;
 import com.platform.service.StoreConfigureService;
-import com.platform.utils.PageUtils;
-import com.platform.utils.Query;
-import com.platform.utils.R;
 
 /**
  * Controller
@@ -68,6 +67,14 @@ public class StoreConfigureController extends AbstractController{
     @RequestMapping("/save")
     @RequiresPermissions("storeconfigure:save")
     public R save(@RequestBody StoreConfigureEntity storeConfigure) {
+        //获取传过来的店铺地址
+        String address = storeConfigure.getAddress();
+        //调用经纬度工具
+        Map<String, Double> map = PositionUtil.getLngAndLat(address);
+        //把获取到的值写进storeConfigure对象中
+        storeConfigure.setLatitude(map.get("lat").toString());
+        storeConfigure.setLongitude(map.get("lng").toString());
+
         //storeConfigure.setDeptParentId(getOneDeptId());
         storeConfigure.setCreateBy(getUser().getUsername());
         storeConfigure.setCreateTime(new Date());

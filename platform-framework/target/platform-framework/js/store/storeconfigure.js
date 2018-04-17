@@ -22,9 +22,9 @@ $(function () {
 				}
 			},
 			{label: '客服电话', name: 'ph', index: 'ph', width: 80,align:'center'},
-			{label: '纬度', name: 'latitude', index: 'latitude', width: 50,align:'center'},
-			{label: '经度', name: 'longitude', index: 'longitude', width: 50,align:'center'},
-			{label: '定位地址', name: 'address', index: 'address', width: 130,align:'center'},
+			{label: '纬度', name: 'latitude', index: 'latitude', width: 50,align:'center',hidden:true},
+			{label: '经度', name: 'longitude', index: 'longitude', width: 50,align:'center',hidden:true},
+			{label: '门店地址', name: 'address', index: 'address', width: 130,align:'center'},
 			{label: '创建者', name: 'createBy', index: 'create_by', width: 55,align:'center',hidden:true},
 			{label: '创建时间', name: 'createTime', index: 'create_time', width: 85,align:'center',hidden:true,formatter: function (value) {
 				return transDate(value);
@@ -93,7 +93,7 @@ let vm = new Vue({
 				{pattern: /^1[3|4|5|7|8][0-9]\d{8}$/, message: '请输入正确的11位手机号码'}
 			],
 			address: [
-				{required: true, message: '定位地址不能为空', trigger: 'blur'}
+				{required: true, message: '门店地址不能为空', trigger: 'blur'}
 			]
 		},
 		q: {
