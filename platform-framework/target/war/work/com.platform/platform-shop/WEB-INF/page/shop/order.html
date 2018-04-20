@@ -67,114 +67,114 @@
             {{title}}
         </p>
         <i-form ref="formValidate" :model="order" :label-width="80">
-            <Form-item label="订单号" prop="orderSn">
-                <i-input v-model="order.orderSn" readonly/>
+            <Form-item label="订单号" prop="orderSn" >
+                <i-input v-model="order.orderSn" readonly style="width: 250px" />
             </Form-item>
             <Form-item label="会员" prop="userName">
-                <i-input v-model="order.userName" readonly/>
+                <i-input v-model="order.userName" readonly style="width: 280px" />
             </Form-item>
-            <Form-item label="订单类型" prop="orderType">
+            <!--<Form-item label="订单类型" prop="orderType">
                 <i-select v-model="order.orderType" disabled>
                     <i-option value="1">普通订单</i-option>
                     <i-option value="2">团购订单</i-option>
                     <i-option value="3">砍价订单</i-option>
                 </i-select>
-            </Form-item>
-            <Form-item label="订单状态" prop="orderStatus" readonly>
+            </Form-item>-->
+            <Form-item label="订单状态" prop="orderStatus">
                 <Radio-group v-model="order.orderStatus">
-                    <Radio label="0" disabled>
+                    <Radio label="0" >
                         <span>待付款</span>
                     </Radio>
-                    <Radio label="101" disabled>
+                    <Radio label="101" >
                         <span>订单已取消</span>
                     </Radio>
-                    <Radio label="102" disabled>
+                    <Radio label="102" >
                         <span>订单已删除</span>
                     </Radio>
-                    <Radio label="201" disabled>
+                    <Radio label="201" >
                         <span>订单已付款</span>
                     </Radio>
-                    <Radio label="300" disabled>
+                    <Radio label="300" >
                         <span>订单已发货</span>
                     </Radio>
-                    <Radio label="301" disabled>
+                    <Radio label="301" >
                         <span>用户确认收货</span>
                     </Radio>
-                    <Radio label="401" disabled>
+                    <Radio label="401" >
                         <span>退款</span>
                     </Radio>
-                    <Radio label="402" disabled>
+                    <Radio label="402" >
                         <span>完成</span>
                     </Radio>
                 </Radio-group>
             </Form-item>
             <Form-item label="发货状态" prop="shippingStatus">
                 <Radio-group v-model="order.shippingStatus">
-                    <Radio label="0" disabled>
+                    <Radio label="0" >
                         <span>待发货</span>
                     </Radio>
-                    <Radio label="1" disabled>
+                    <Radio label="1" >
                         <span>已发货</span>
                     </Radio>
-                    <Radio label="2" disabled>
+                    <Radio label="2" >
                         <span>已收货</span>
                     </Radio>
-                    <Radio label="4" disabled>
+                    <Radio label="4" >
                         <span>退货</span>
                     </Radio>
                 </Radio-group>
             </Form-item>
             <Form-item label="付款状态" prop="payStatus">
                 <Radio-group v-model="order.payStatus">
-                    <Radio label="0" disabled>
+                    <Radio label="0" >
                         <span>待付款</span>
                     </Radio>
-                    <Radio label="1" disabled>
+                    <Radio label="1" >
                         <span>付款中</span>
                     </Radio>
-                    <Radio label="2" disabled>
+                    <Radio label="2" >
                         <span>已付款</span>
                     </Radio>
                 </Radio-group>
             </Form-item>
             <Form-item label="收货人" prop="consignee">
-                <i-input v-model="order.consignee" readonly/>
+                <i-input v-model="order.consignee" readonly style="width: 300px" />
             </Form-item>
             <Form-item label="收货地址" prop="address">
-                <i-input v-model="order.address" readonly/>
+                <i-input v-model="order.address" readonly style="width: 800px"/>
             </Form-item>
             <Form-item label="联系电话" prop="mobile">
-                <i-input v-model="order.mobile" readonly/>
+                <i-input v-model="order.mobile" readonly style="width: 250px"/>
             </Form-item>
             <Form-item label="快递公司" prop="shippingName">
-                <i-input v-model="order.shippingName" readonly/>
+                <i-input v-model="order.shippingName" readonly style="width: 250px"/>
             </Form-item>
             <Form-item label="快递单号" prop="shippingNo">
-                <i-input v-model="order.shippingNo" readonly/>
+                <i-input v-model="order.shippingNo" readonly style="width: 250px"/>
             </Form-item>
             <Form-item label="付款方" prop="payName">
-                <i-input v-model="order.payName" readonly/>
+                <i-input v-model="order.payName" readonly style="width: 300px"/>
             </Form-item>
             <Form-item label="快递费用" prop="shippingFee">
-                <i-input v-model="order.shippingFee" readonly/>
+                <i-input v-model="order.shippingFee" readonly style="width: 200px"/>
             </Form-item>
             <Form-item label="实际支付" prop="actualPrice">
-                <i-input v-model="order.actualPrice" readonly/>
+                <i-input v-model="order.actualPrice" readonly style="width: 200px"/>
             </Form-item>
             <Form-item label="订单总价" prop="orderPrice">
-                <i-input v-model="order.orderPrice" readonly/>
+                <i-input v-model="order.orderPrice" readonly style="width: 200px"/>
             </Form-item>
             <Form-item label="商品总价" prop="goodsPrice">
-                <i-input v-model="order.goodsPrice" readonly/>
+                <i-input v-model="order.goodsPrice" readonly style="width: 200px"/>
             </Form-item>
             <Form-item label="下单时间" prop="addTime">
-                <Date-picker v-model="order.addTime" placeholder="使用时间" readonly/>
+                <Date-picker v-model="order.addTime" placeholder="使用时间" format="yyyy-MM-dd HH:mm:ss" readonly/>
             </Form-item>
             <Form-item label="付款时间" prop="payTime">
-                <Date-picker v-model="order.payTime" placeholder="使用时间" readonly/>
+                <Date-picker v-model="order.payTime" placeholder="使用时间" format="yyyy-MM-dd HH:mm:ss" readonly/>
             </Form-item>
             <Form-item label="配送费用" prop="freightPrice">
-                <i-input v-model="order.freightPrice" readonly/>
+                <i-input v-model="order.freightPrice" readonly style="width: 200px"/>
             </Form-item>
 
             <Form-item>

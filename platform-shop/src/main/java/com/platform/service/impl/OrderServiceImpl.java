@@ -70,12 +70,17 @@ public class OrderServiceImpl implements OrderService {
             throw new RRException("此订单未发货，不能确认收货！");
         }
         orderEntity.setShippingStatus(2);
+        orderEntity.setOrderStatus(402);
         return 0;
     }
 
     @Override
     public int sendGoods(OrderEntity order) {
         Integer payStatus = order.getPayStatus();//付款状态
+        Integer orderStatus = order.getOrderStatus();//订单状态
+        if (201 != orderStatus){
+            throw new RRException("此订单不符合发货状态！");
+        }
         if (2 != payStatus) {
             throw new RRException("此订单未付款！");
         }

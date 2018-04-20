@@ -24,7 +24,7 @@ $(function () {
             {label: '订单号', name: 'orderSn', index: 'order_sn', width: 110,align:'center'},
             {label: '会员', name: 'userName', index: 'user_name', width: 100,align:'center'},
             {
-                label: '订单类型', name: 'orderType', index: 'order_type', width: 80,align:'center',formatter: function (value) {
+                label: '订单类型', name: 'orderType', index: 'order_type', width: 80,align:'center',hidden:true,formatter: function (value) {
                 if (value == '1') {
                     return '普通订单';
                 } else if (value == '2') {

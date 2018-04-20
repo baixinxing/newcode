@@ -24,7 +24,7 @@ $(function () {
             {label: '订单号', name: 'orderSn', index: 'order_sn', width: 110,align:'center'},
             {label: '会员', name: 'userName', index: 'user_name', width: 100,align:'center'},
             {
-                label: '订单类型', name: 'orderType', index: 'order_type', width: 80,align:'center',formatter: function (value) {
+                label: '订单类型', name: 'orderType', index: 'order_type', width: 80,align:'center',hidden:true,formatter: function (value) {
                 if (value == '1') {
                     return '普通订单';
                 } else if (value == '2') {
@@ -51,7 +51,7 @@ $(function () {
                     return '<span class="label label-warning">订单已付款</span>';
                 } else if (value == '300') {
                     //return '订单已发货';
-                    return '<span class="label label-important">订单已发货</span>';
+                    return '<span class="label label-info">订单已发货</span>';
                 } else if (value == '301') {
                     //return '用户确认收货';
                     return '<span class="label label-info">用户确认收货</span>';
