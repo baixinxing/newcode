@@ -11,6 +11,7 @@
         <result property="latitude" column="latitude"/>
         <result property="longitude" column="longitude"/>
         <result property="address" column="address"/>
+        <result property="remark" column="remark"/>
     </resultMap>
 
     <select id="queryObject" resultMap="gsMap">
@@ -20,7 +21,8 @@
 		  `ph`,
 		  `latitude`,
 		  `longitude`,
-		  `address`
+		  `address`,
+		  `remark`
 		from nideshop_store_configure where store_id = #{value}
 	</select>
 
@@ -31,7 +33,8 @@
         `ph`,
         `latitude`,
         `longitude`,
-        `address`
+        `address`,
+        `remark`
         from nideshop_store_configure
         where 1 = 1
         <if test="identify != null">
@@ -69,7 +72,8 @@
 		  `ph`,
 		  `latitude`,
 		  `longitude`,
-		  `address`
+		  `address`,
+		  `remark`
 		)
 		values
 		(
@@ -78,7 +82,8 @@
 			#{ph},
 			#{latitude},
 			#{longitude},
-			#{address}
+			#{address},
+			#{remark}
 		)
 	</insert>
 
@@ -91,6 +96,7 @@
             <if test="latitude != null">`latitude` = #{latitude},</if>
             <if test="longitude != null">`longitude` = #{longitude},</if>
             <if test="address != null">`address` = #{address}</if>
+            <if test="remark != null">`remark` = #{remark}</if>
         </set>
         where id = #{id}
     </update>

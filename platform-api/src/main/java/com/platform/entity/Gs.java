@@ -18,7 +18,16 @@ public class Gs implements Serializable {
     private String longitude;
     //地址信息
     private String address;
+    //关于我们
+    private String remark;
 
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
 
     public Long getStoreId() {
         return storeId;

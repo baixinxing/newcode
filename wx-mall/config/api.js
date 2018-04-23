@@ -1,7 +1,8 @@
 // var NewApiRootUrl = 'https://xcx.shty888.com/ds-xcx/api/';
 //var NewApiRootUrl = 'http://127.0.0.1:8080/platform-admin/api/';
-var storeId =1;//标识唯一 店铺
-var NewApiRootUrl = 'http://localhost:8080/all/api/';
+var storeId = 1;//标识唯一 店铺
+// var NewApiRootUrl = 'http://192.168.0.216:8080/all/api/';
+var NewApiRootUrl = 'http://xcx.shty888.com/ty/api/';
 module.exports = {
 
     StoreId:storeId,
@@ -88,6 +89,6 @@ module.exports = {
     FootprintList: NewApiRootUrl + 'footprint/list',  //足迹列表
     FootprintDelete: NewApiRootUrl + 'footprint/delete',  //删除足迹
 
-    GS: NewApiRootUrl +"gs.json",//公司信息
+    // GS: NewApiRootUrl +"gs.json",//公司信息
     Feedback: NewApiRootUrl +"/feedback/save"
 };

@@ -51,7 +51,7 @@ $(function () {
                     return '<span class="label label-warning">订单已付款</span>';
                 } else if (value == '300') {
                     //return '订单已发货';
-                    return '<span class="label label-important">订单已发货</span>';
+                    return '<span class="label label-info">订单已发货</span>';
                 } else if (value == '301') {
                     //return '用户确认收货';
                     return '<span class="label label-info">用户确认收货</span>';
