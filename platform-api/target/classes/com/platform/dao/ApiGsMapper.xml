@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.platform.dao.ApiGsMapper">
+
+    <!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.platform.entity.Gs" id="gsMap">
+        <result property="storeId" column="store_id"/>
+        <result property="deptParentId" column="dept_parent_id"/>
+        <result property="ph" column="ph"/>
+        <result property="latitude" column="latitude"/>
+        <result property="longitude" column="longitude"/>
+        <result property="address" column="address"/>
+        <result property="remark" column="remark"/>
+    </resultMap>
+
+    <select id="queryObject" resultMap="gsMap">
+		select
+		  `store_id`,
+		  `dept_parent_id`,
+		  `ph`,
+		  `latitude`,
+		  `longitude`,
+		  `address`,
+		  `remark`
+		from nideshop_store_configure where store_id = #{value}
+	</select>
+
+    <select id="queryList" resultMap="gsMap">
+        select
+        `store_id`,
+        `dept_parent_id`,
+        `ph`,
+        `latitude`,
+        `longitude`,
+        `address`,
+        `remark`
+        from nideshop_store_configure
+        where 1 = 1
+        <if test="identify != null">
+            AND dept_parent_id = #{identify}
+        </if>
+        <choose>
+            <when test="sidx != null and sidx.trim() != ''">
+                order by ${sidx} ${order}
+            </when>
+            <otherwise>
+                order by id desc
+            </otherwise>
+        </choose>
+        <if test="offset != null and limit != null">
+            limit #{offset}, #{limit}
+        </if>
+    </select>
+
+    <select id="queryTotal" resultType="int">
+		select count(*) from  nideshop_store_configure
+        WHERE 1=1
+        <if test="name != null and name.trim() != ''">
+            AND name LIKE concat('%',#{name},'%')
+        </if>
+        <if test="identify != null ">
+            AND dept_parent_id =#{identify}
+        </if>
+	</select>
+
+    <insert id="save" parameterType="com.platform.entity.Gs" useGeneratedKeys="true" keyProperty="id">
+		insert into nideshop_store_configure
+		(
+		  `store_id`,
+		  `dept_parent_id`,
+		  `ph`,
+		  `latitude`,
+		  `longitude`,
+		  `address`,
+		  `remark`
+		)
+		values
+		(
+			#{storeId},
+			#{deptParentId},
+			#{ph},
+			#{latitude},
+			#{longitude},
+			#{address},
+			#{remark}
+		)
+	</insert>
+
+    <update id="update" parameterType="com.platform.entity.Gs">
+        update nideshop_store_configure
+        <set>
+            <if test="store_id != null">`store_id` = #{storeId},</if>
+            <if test="dept_parent_id != null">`dept_parent_id` = #{deptParentId},</if>
+            <if test="ph != null">`ph` = #{ph},</if>
+            <if test="latitude != null">`latitude` = #{latitude},</if>
+            <if test="longitude != null">`longitude` = #{longitude},</if>
+            <if test="address != null">`address` = #{address}</if>
+            <if test="remark != null">`remark` = #{remark}</if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <delete id="delete">
+		delete from nideshop_store_configure where id = #{value}
+	</delete>
+
+    <delete id="deleteBatch">
+        delete from nideshop_store_configure where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>
